@@ -8,7 +8,10 @@ import (
 
 // DbConfig ...
 type DbConfig struct {
+	//tipo de DB
+	Type   string `yaml:"type"`
 	Driver string `yaml:"driver"`
+	Conn   string `yaml:"conn"`
 }
 
 // Config ...
@@ -33,5 +36,3 @@ func LoadConfig(filename string) (*Config, error) {
 
 	return c, nil
 }
-
-//github.com/terehsieh/SeminarioGoLang.git
