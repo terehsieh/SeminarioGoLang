@@ -23,7 +23,7 @@ func main() {
 		fmt.Println(err.Error())
 		os.Exit(1)
 	}
-
+	//createSchema(db)
 	//Inyeccion de la configuracion
 	service, _ := product.New(db, cfg) //contructor
 	httpService := product.NewHTTPTransport(service)
