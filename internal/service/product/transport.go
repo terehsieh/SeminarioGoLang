@@ -101,7 +101,7 @@ func create(s Service) gin.HandlerFunc {
 		}
 		s.AddProduct(p)
 		c.JSON(http.StatusCreated, gin.H{
-			"message": "Producto eliminado",
+			"message": "Producto creado",
 		})
 	}
 }

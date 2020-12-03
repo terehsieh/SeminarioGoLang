@@ -59,16 +59,11 @@ func (s service) AddProduct(p Product) {
 //READ
 //Get by ID
 func (s service) FindByID(ID int) *Product {
-	var f []*Product
-	if err := s.db.Select(&f, "SELECT * FROM product WHERE id = ?", ID); err != nil {
+	var prod *Product
+	if err := s.db.Select(&prod, "SELECT * FROM product WHERE id = ?", ID); err != nil {
 		panic(err)
 	}
-
-	if len(f) > 0 {
-		return f[0]
-	} else {
-		return nil
-	}
+	return prod
 }
 
 //Get All
